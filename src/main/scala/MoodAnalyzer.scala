@@ -1,12 +1,13 @@
 object MoodAnalyzer extends App {
   def analyzeMood(message: String): String = {
     try {
-      if (message.contains("Sad")) "Sad"
-      else "Happy"
+      if (message.contains("Sad")) return "Sad"
+      else if (message.contains("Happy")) "Happy"
+      else " "
     }
     catch {
-      case _: NullPointerException =>
-        "Happy"
+      case _: NullPointerException => "Happy"
+
     }
   }
 }
